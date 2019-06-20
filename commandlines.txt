@@ -1,0 +1,6 @@
+To provide database path for mongo db
+/f/Installs
+mongodb/bin/mongod.exe --dbpath=mongodb-data
+
+npm install mongodb --save
+
