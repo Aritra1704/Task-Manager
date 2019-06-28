@@ -5,30 +5,30 @@
 // const ObjectID = mongodb.ObjectId
 
 //Destructuring mongoDB
-const {MongoClient, ObjectID} = require('mongodb')
+// const {MongoClient, ObjectID} = require('mongodb')
 
-const connectionURL = 'mongodb://127.0.0.1:27017'
-const databaseName = 'task-manager'
+// const connectionURL = 'mongodb://127.0.0.1:27017'
+// const databaseName = 'task-manager'
 
-const id = new ObjectID()
-console.log(id)
-console.log(id.getTimestamp())
+// const id = new ObjectID()
+// console.log(id)
+// console.log(id.getTimestamp())
 
-MongoClient.connect(connectionURL, { useNewUrlParser: true }, (error, client) => {
-    if(error) {
-        return console.log('Unable to connect to database!')
-    }
+// MongoClient.connect(connectionURL, { useNewUrlParser: true }, (error, client) => {
+//     if(error) {
+//         return console.log('Unable to connect to database!')
+//     }
 
-    const db = client.db(databaseName)
+//     const db = client.db(databaseName)
 
-    //   //Delete Method  Are you Aditya?
-    db.collection('tasks').deleteOne({
-        description: 'Are you Aditya?'
-    }).then((result) => {
-        console.log(result.deletedCount)
-    }).catch((error) => {
-        console.log(error)
-    })
+//     //   //Delete Method  Are you Aditya?
+//     db.collection('tasks').deleteOne({
+//         description: 'Are you Aditya?'
+//     }).then((result) => {
+//         console.log(result.deletedCount)
+//     }).catch((error) => {
+//         console.log(error)
+//     })
     // db.collection('tasks').deleteOne({
     //     _id: new ObjectID('5cea6568243fd0517c05fb94')
     // }).then((result) => {
@@ -169,4 +169,4 @@ MongoClient.connect(connectionURL, { useNewUrlParser: true }, (error, client) =>
 
     //     console.log(tasks)
     // })
-})
+// })
