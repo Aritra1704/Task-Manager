@@ -7,6 +7,15 @@ const taskRouter = require('./routers/task')
 const app = express()
 const port = process.env.PORT || 3000
 
+app.use(express.json())
+app.use(userRouter)
+app.use(taskRouter)
+
+app.listen(port, () => {
+    console.log('Server is up on port ' + port)
+})
+
+
 // app.use((req, res, next) => {
 //     if(req.method == 'GET') {
 //         res.send('GET requestes are disabled')
@@ -21,9 +30,31 @@ const port = process.env.PORT || 3000
 //     res.status(503).send('The site is under maintenance')
 // })
 
-app.use(express.json())
-app.use(userRouter)
-app.use(taskRouter)
+// const multer = require('multer')
+// const upload = multer({
+//     dest: 'images',
+//     limits: {
+//         fileSize: 1000000 // 1 MB
+//     },
+//     fileFilter(req, file, cb) {
+//         if(!file.originalname.match(/\.(doc|docx)$/)) {
+//             return cb(new Error('Please upload a Word document'))
+//         }
+
+//         cb(undefined, true)
+//         // cb(new Error('File must be a PDF'))
+//         // cb(undefined, true)
+//         // cb(undefined, false)
+//     }
+// })
+
+// app.post('/upload', upload.single('upload'), (req, res) => {
+//     res.send()
+// }, (error, req, res, next) => {// Set of arguments necessary so that express undertands the error is handled properly
+//     res.status(400).send({ error: error.message })
+// })
+
+
 
 // const router = new express.Router()
 // router.get('/test', (req, res) => {
@@ -31,12 +62,10 @@ app.use(taskRouter)
 // })
 // app.use(router)
 
-app.listen(port, () => {
-    console.log('Server is up on port ' + port)
-})
 
-const Task = require('./models/task')
-const User = require('./models/user')
+
+// const Task = require('./models/task')
+// const User = require('./models/user')
 
 // const main = async () => {
 //     // const task = await Task.findById('5d299b9b6b3da05948502ab5')
