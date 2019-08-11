@@ -4,3 +4,6 @@ mongodb/bin/mongod.exe --dbpath=mongodb-data
 
 npm install mongodb --save
 
+npm run dev
+npm run test
+
