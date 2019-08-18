@@ -24,6 +24,7 @@ test('Should celsius to fahrenheit', () => {
 //     }, 2000)
 // })
 
+
 test('Should add two numbers', (done) => {
     add(2, 3).then((sum) => {
         expect(sum).toBe(5)
