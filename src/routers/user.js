@@ -123,7 +123,7 @@ router.patch('/users/me', auth, async (req, res) => {
 
         return res.send(user)
     } catch (e) {
-        return res.status(400).send(e)
+        return res.status(400).send()
     }
 })
 
